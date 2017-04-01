@@ -1,0 +1,11 @@
+           
+  %%%%%%%%%%%% Additional lines on incoming protons and blob
+  \fmffreeze
+  \renewcommand{\P}[3]{\fmfi{plain}{%
+      vpath(__#1,__#2) shifted (thick*(#3))}}
+  \P{i1}{v1}{1.2,-1.2}
+  \P{i1}{v1}{-1.2,1.2}
+  \P{i2}{v1}{1.2,1.2}
+  \P{i2}{v1}{-1.2,-1.2}
+  \fmfv{decor.shape=circle,decor.filled=30, decor.size=.12w}{v1}
+

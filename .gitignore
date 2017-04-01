@@ -1,0 +1,10 @@
+*.o
+*.d
+*.exe
+.#*
+*~
+*.pyc
+*.root
+root
+*.a
+*.pdf

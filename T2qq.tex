@@ -1,0 +1,62 @@
+
+%%%%%%%%%%%%%%%%%%%%%% Feynman diagram for T2qq
+
+\documentclass{article}
+
+\input{shared/header.tex}
+
+\def\MainQuark{q}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty}
+
+
+%%%%%%%% THE NAME OF THE fmffile HAS TO BE ``Feynman<filename>'' TO USE compile.py %%%%%%%%%%%%%%%
+\begin{fmffile}{FeynmanT2qq}
+\parbox{300mm}{
+
+\begin{fmfgraph*}(180,90) %\fmfpen{thick}
+  \fmfset{arrow_len}{cm}\fmfset{arrow_ang}{0}
+  
+  %%%%%%%%%%%% Specifying number of inputs/outputs
+  \fmfleftn{i}{2}
+  \fmfrightn{o}{4}
+  \fmflabel{}{i1}
+  \fmflabel{}{i2}
+    
+  %%%%%%%%%%%% Incoming protons (one line)
+  \fmf{fermion,  tension=2., lab=p, label.side=right}{v1,i1}
+  \fmf{fermion,  tension=2., lab=p, label.side=left}{v1,i2}
+           
+  %%%%%%%%%%%% Produced SUSY particles
+  \fmf{dashes, label=\sQ, label.side=left}{v1,v3}
+  \fmf{dashes, label=\sQb, label.side=right}{v1,v2}
+
+  %%%%%%%%%%%%% Decays and vertex circles
+  \fmf{fermion}{v3,o4} 
+  \fmflabel{\MainQuark}{o4}
+
+  \fmf{dots}{v3,o3}
+  \fmflabel{\chiz}{o3}
+
+  %% 2nd decay
+  \fmf{fermion}{v2,o1}
+  \fmflabel{$\mathrm{\overline{\MainQuark}}$}{o1}
+ 
+  \fmf{dots}{v2,o2}
+  \fmflabel{\chiz}{o2}
+
+  %% Vertex circles
+  \fmfdot{v2,v3}
+           
+  %%%%%%%%%%%% Additional lines on incoming protons and blob
+  \input{shared/protons.tex}
+
+\end{fmfgraph*}
+       
+}           
+\end{fmffile} 
+
+\end{document}
