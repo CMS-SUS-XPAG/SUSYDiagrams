@@ -1,11 +1,9 @@
 
-%%%%%%%%%%%%%%%%%%%%%% Feynman diagram for T2bbHH
+%%%%%%%%%%%%%%%%%%%%%% Feynman diagram for T5qqqqGG
 
 \documentclass{article}
 
 \input{shared/header.tex}
-
-\def\MainQuark{b}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -41,7 +39,7 @@
   \fmf{fermion}{v3,o8}
   \fmf{fermion}{v3,o7}
   \fmflabel{q}{o8}
-  \fmflabel{$\bar{\rm{q}}$}{o7}
+  \fmflabel{\anti{q}}{o7}
 
   \fmf{dots, label=\chiz, label.dist=3.}{v3,v5}
   \fmf{photon}{v5,o6}
@@ -62,7 +60,7 @@
   \fmflabel{$\gamma$}{o3}
 
   \fmflabel{q}{o1}
-  \fmflabel{$\bar{\rm{q}}^\prime$}{o2}
+  \fmflabel{\anti{q}}{o2}
 
   %% Vertex circles
   \fmfdot{v2,v3,v4,v5}
