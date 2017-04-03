@@ -1,0 +1,77 @@
+
+%%%%%%%%%%%%%%%%%%%%%% Feynman diagram for T5qqqqWG
+
+\documentclass{article}
+
+\input{shared/header.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty}
+
+
+%%%%%%%% THE NAME OF THE fmffile HAS TO BE ``Feynman<filename>'' TO USE compile.py %%%%%%%%%%%%%%%
+\begin{fmffile}{FeynmanT5qqqqWG}
+\parbox{300mm}{
+
+\begin{fmfgraph*}(180,90) %\fmfpen{thick}
+
+  \fmfset{arrow_len}{cm}\fmfset{arrow_ang}{0}
+
+  %%%%%%%%%%%% Specifying number of inputs/outputs
+  \fmfleftn{i}{2}
+  \fmfrightn{o}{8}
+  \fmflabel{}{i1}
+  \fmflabel{}{i2}
+
+  %%%%%%%%%%%% Incoming protons (one line)
+  \fmf{fermion, tension=2, lab=p, label.side=right}{v1,i1}
+  \fmf{fermion, tension=2, lab=p, label.side=left}{v1,i2}
+
+  %%%%%%%%%%%% Produced SUSY particles
+  \fmf{gluon, label=\sGlu, label.side=left, label.dist=8.}{v1,v3}
+  \fmf{gluon, label=\sGlu, label.side=right, label.dist=10.}{v1,v2}
+  \fmf{fermion}{v1,v2}
+  \fmf{fermion}{v1,v3}
+
+  %%%%%%%%%%%%% Decays and vertex circles
+  \fmf{fermion}{v3,o8}
+  \fmf{fermion}{v3,o7}
+  \fmflabel{q}{o8}
+  \fmflabel{\anti{q}}{o7}
+
+  \fmf{dots, label=\chiz, label.dist=3.}{v3,v5}
+  \fmf{photon}{v5,o6}
+  \fmflabel{$\gamma$}{o6}
+
+  \fmf{dots}{v5,o5}
+  \fmflabel{\sGra}{o5}
+
+  \fmf{fermion}{v2,o1}
+  \fmf{fermion}{v2,o2}
+
+  \fmf{dots, label=\chipm, label.side=left, label.dist=3.}{v2,v4}
+
+  \fmf{dots}{v4,o4}
+  \fmflabel{\sGra}{o4}
+
+  \fmf{photon}{v4,o3}
+  \fmflabel{\PW}{o3}
+
+  \fmflabel{q}{o1}
+  \fmflabel{\anti{q}}{o2}
+
+  %% Vertex circles
+  \fmfdot{v2,v3,v4,v5}
+
+  %%%%%%%%%%%% Additional lines on incoming protons and blob
+  \input{shared/protons.tex}
+
+
+\end{fmfgraph*}
+
+}
+\end{fmffile}
+
+\end{document}
