@@ -13,11 +13,11 @@ Just run the `compile.py` script on any of .tex files with the LaTeX code for a 
 
     ./compile.py TChiHH.tex
 
-You can also compile all the diagrams in the current folder by runnin
+You can also compile all the diagrams in the current folder by running
 
     ./compile.py all
 
-To create a new diagram just copy one of the provided files, change the decays as you wish, and change
+To create a new diagram just copy one of the provided .tex files, change the decays as you wish, and change
 the name of the fmffile to match the new filename, e.g. if you create a `T2bb.tex` file, the fmffile
 should be named `FeynmanT2bb`.
 
