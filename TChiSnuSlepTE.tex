@@ -14,7 +14,7 @@
 
 
 %%%%%%%% THE NAME OF THE fmffile HAS TO BE ``Feynman<filename>'' TO USE compile.py %%%%%%%%%%%%%%%
-\begin{fmffile}{FeynmanT2bbHH}
+\begin{fmffile}{FeynmanTChiSnuSlepTE}
 \parbox{300mm}{
 
 \begin{fmfgraph*}(180,90) %\fmfpen{thick}
@@ -31,28 +31,28 @@
   \fmf{fermion,  tension=2., lab=p, label.side=left}{v1,i2}
            
   %%%%%%%%%%%% Produced SUSY particles
-  \fmf{dashes, label=\sBot, label.side=left}{v1,v3}
-  \fmf{dashes, label=\sBotb, label.side=right}{v1,v2}
+  \fmf{dots, label=\chitz, label.side=left}{v1,v3}
+  \fmf{dots, label=\chipm, label.side=right}{v1,v2}
 
   %%%%%%%%%%%%% Decays and vertex circles
 
   %%% Top vertex
   \fmf{fermion}{v3,o6}
-  \fmflabel{\MainQuark}{o6}
+  \fmflabel{$\ell$}{o6}
 
-  \fmf{dots, label=\chitz,label.dist=+3, label.side=right}{v3,v5}
-  \fmf{dashes}{v5,o5}
-  \fmflabel{\Ph}{o5}
+  \fmf{dashes, label=\sLep,label.dist=+3, label.side=right}{v3,v5}
+  \fmf{fermion}{v5,o5}
+  \fmflabel{$\ell$}{o5}
   
   \fmf{dots}{v5,o4}
   \fmflabel{\chiz}{o4}
   
   %%% Bottom vertex
   \fmf{fermion}{v2,o1}
-  \fmflabel{$\mathrm{\overline{\MainQuark}}$}{o1}
-  \fmf{dots, label=\chitz, label.dist=+3, label.side=left}{v2,v4}
-  \fmf{dashes}{v4,o2}
-  \fmflabel{\Ph}{o2}
+  \fmflabel{$\nu$}{o1}
+  \fmf{dashes, label=\sTau, label.dist=+3, label.side=left}{v2,v4}
+  \fmf{fermion}{v4,o2}
+  \fmflabel{$\tau$}{o2}
   
   \fmf{dots}{v4,o3}
   \fmflabel{\chiz}{o3}

@@ -14,7 +14,7 @@
 
 
 %%%%%%%% THE NAME OF THE fmffile HAS TO BE ``Feynman<filename>'' TO USE compile.py %%%%%%%%%%%%%%%
-\begin{fmffile}{FeynmanT5qqqqWW}
+\begin{fmffile}{FeynmanT5ttbbWW}
 \parbox{300mm}{
 
 \begin{fmfgraph*}(180,90)
@@ -38,22 +38,22 @@
 
 
   %%%%%%%%%%%%% Decays and vertex circles
-  \fmflabel{$\mathrm{\overline{\MainQuark}^\prime}$}{o1}
-  \fmflabel{\MainQuark}{o2}
-  \fmflabel{\PW}{o3}
+  \fmflabel{$\mathrm{\overline{t}}$}{o1}
+  \fmflabel{b}{o2}
+  \fmflabel{W$^+$}{o3}
   \fmflabel{\chiz}{o4}
   \fmf{fermion}{o1,v3,o2}
-  \fmf{dots, label=\chipm,label.dist=+3, label.side=left}{v3,v4}
+  \fmf{dots, label=$\widetilde{\chi}_1^+$,label.dist=+3, label.side=left}{v3,v4}
   \fmf{dots}{v4,o4}
   \fmf{photon}{v4,o3}
 
   %% 2nd decay
   \fmflabel{\chiz}{o5}
-  \fmflabel{\PW}{o6}
-  \fmflabel{$\mathrm{\overline{\MainQuark}^\prime}$}{o7}
-  \fmflabel{\MainQuark}{o8}
+  \fmflabel{W$^+$}{o6}
+  \fmflabel{$\mathrm{\overline{t}}$}{o7}
+  \fmflabel{b}{o8}
   \fmf{fermion}{o7,v2,o8}
-  \fmf{dots, label=\chipm,label.dist=+2, label.side=right}{v2,v5}
+  \fmf{dots, label=$\widetilde{\chi}_1^+$,label.dist=+2, label.side=right}{v2,v5}
   \fmf{dots}{v5,o5}
   \fmf{photon}{v5,o6}
 
