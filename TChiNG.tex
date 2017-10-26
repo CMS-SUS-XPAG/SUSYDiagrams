@@ -26,12 +26,12 @@
   \fmflabel{}{i1}
   \fmflabel{}{i2}
 
-  \fmfforce{0.65w,1.0h}{o8}
-  \fmfforce{0.75w,1.0h}{o7}
-  \fmfforce{0.75w,0.0h}{o2}
-  \fmfforce{0.65w,0.0h}{o1}
-  \fmfforce{1.0w,1.0h}{o6}
-  \fmfforce{1.0w,0.0h}{o3}
+%  \fmfforce{0.65w,1.0h}{o8}
+%  \fmfforce{0.75w,1.0h}{o7}
+%  \fmfforce{0.75w,0.0h}{o2}
+%  \fmfforce{0.65w,0.0h}{o1}
+%  \fmfforce{1.0w,1.0h}{o6}
+%  \fmfforce{1.0w,0.0h}{o3}
     
   %%%%%%%%%%%% Incoming protons (one line)
   \fmf{fermion,  tension=2., lab=p, label.side=right}{v1,i1}
@@ -45,7 +45,8 @@
 
   %%% Top vertex
   \fmf{fermion}{v3,o8}
-  \fmflabel{soft}{o8}
+%  \fmflabel{soft}{o8}
+  \fmfv{label=soft,l.dist=5thick,l.angle=15.}{o8}
   \fmf{fermion}{v3,o7}
 %  \fmflabel{$\ell$}{o7}
 
@@ -54,20 +55,21 @@
   \fmf{photon}{v5,o6}
   \fmflabel{$\gamma$}{o6}
   
-  \fmf{dbl_dots}{v5,o5}
+  \fmf{dots}{v5,o5}
   \fmflabel{\sGra}{o5}
   
   %%% Bottom vertex
   \fmf{fermion}{v2,o1}
-  \fmflabel{soft}{o1}
+%  \fmflabel{soft}{o1}
+  \fmfv{label=soft,l.dist=5thick,l.angle=15.}{o1}
   \fmf{fermion}{v2,o2}
 %  \fmflabel{$\ell$}{o2}
 
   \fmf{dots, label=\chiz, label.dist=+3, label.side=left}{v2,v4}
-  \fmf{fermion}{v4,o3}
-  \fmflabel{Z/H}{o3}
+  \fmf{photon}{v4,o3}
+  \fmflabel{\PZ/\Ph}{o3}
   
-  \fmf{dbl_dots}{v4,o4}
+  \fmf{dots}{v4,o4}
   \fmflabel{\sGra}{o4}
                
   %% Vertex circles
