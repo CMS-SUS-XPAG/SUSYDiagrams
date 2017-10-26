@@ -1,0 +1,70 @@
+
+%%%%%%%%%%%%%%%%%%%%%% Feynman diagram for T6qqWG
+
+\documentclass{article}
+
+\input{shared/header.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty}
+
+
+%%%%%%%% THE NAME OF THE fmffile HAS TO BE ``Feynman<filename>'' TO USE compile.py %%%%%%%%%%%%%%%
+\begin{fmffile}{FeynmanTChiZWGG}
+\parbox{300mm}{
+
+\begin{fmfgraph*}(180,90) %\fmfpen{thick}
+
+  \fmfset{arrow_len}{cm}\fmfset{arrow_ang}{0}
+
+  %%%%%%%%%%%% Specifying number of inputs/outputs
+  \fmfleftn{i}{2}
+  \fmfrightn{o}{6}
+  \fmflabel{}{i1}
+  \fmflabel{}{i2}
+
+  %%%%%%%%%%%% Incoming protons (one line)
+  \fmf{fermion, tension=2, lab=p, label.side=right}{v1,i1}
+  \fmf{fermion, tension=2, lab=p, label.side=left}{v1,i2}
+
+  %%%%%%%%%%%% Produced SUSY particles
+  \fmf{dots, label=\chitz, tension=1.5, label.side=left, label.dist=8.}{v1,v3}
+  \fmf{dots, label=\chipm, tension=1.5, label.side=right, label.dist=10.}{v1,v2}
+  %%%%%%%%%%%%% Decays and vertex circles
+
+  \fmf{photon}{v2,o1}
+  \fmflabel{\PW}{o1}
+
+  \fmf{dots, foreground=black, label=\chiz, label.side=right, label.dist=-13}{v2,v4}
+  \fmf{photon}{v4,o2}
+  \fmflabel{$\gamma$/\PZ}{o2}
+
+  \fmflabel{\sGra}{o3}
+  \fmf{dots, foreground=black}{v4,o3}
+
+
+  \fmf{photon}{v3,o6}
+  \fmflabel{\PZ/\Ph}{o6}
+
+  \fmf{dots, foreground=black, label=\chiz, label.side=right, label.dist=2}{v3,v5}
+  \fmf{photon}{v5,o5}
+  \fmflabel{$\gamma$/\PZ}{o5}
+
+  \fmflabel{\sGra}{o4}
+  \fmf{dots, foreground=black}{v5,o4}
+
+  %% Vertex circles
+  \fmfdot{v2,v3,v4,v5}
+
+  %%%%%%%%%%%% Additional lines on incoming protons and blob
+  \input{shared/protons.tex}
+
+
+\end{fmfgraph*}
+
+}
+\end{fmffile}
+
+\end{document}
