@@ -1,0 +1,86 @@
+
+%%%%%%%%%%%%%%%%%%%%%% Feynman diagram for T2bbHH
+
+\documentclass{article}
+
+\input{shared/header.tex}
+
+\def\MainQuark{b}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty}
+
+
+%%%%%%%% THE NAME OF THE fmffile HAS TO BE ``Feynman<filename>'' TO USE compile.py %%%%%%%%%%%%%%%
+\begin{fmffile}{FeynmanTChiNG}
+\parbox{300mm}{
+
+\begin{fmfgraph*}(180,90) %\fmfpen{thick}
+  \fmfset{arrow_len}{cm}\fmfset{arrow_ang}{0}
+  
+  %%%%%%%%%%%% Specifying number of inputs/outputs
+  \fmfleftn{i}{2}
+  \fmfrightn{o}{8}
+  \fmflabel{}{i1}
+  \fmflabel{}{i2}
+
+%  \fmfforce{0.65w,1.0h}{o8}
+%  \fmfforce{0.75w,1.0h}{o7}
+%  \fmfforce{0.75w,0.0h}{o2}
+%  \fmfforce{0.65w,0.0h}{o1}
+%  \fmfforce{1.0w,1.0h}{o6}
+%  \fmfforce{1.0w,0.0h}{o3}
+    
+  %%%%%%%%%%%% Incoming protons (one line)
+  \fmf{fermion,  tension=2., lab=p, label.side=right}{v1,i1}
+  \fmf{fermion,  tension=2., lab=p, label.side=left}{v1,i2}
+           
+  %%%%%%%%%%%% Produced SUSY particles
+  \fmf{dots, tension=1.5, label=\chipm, label.side=left}{v1,v3}
+  \fmf{dots, tension=1.5, label=\chimp, label.side=right}{v1,v2}
+
+  %%%%%%%%%%%%% Decays and vertex circles
+
+  %%% Top vertex
+  \fmf{fermion}{v3,o8}
+%  \fmflabel{soft}{o8}
+  \fmfv{label=soft,l.dist=5thick,l.angle=15.}{o8}
+  \fmf{fermion}{v3,o7}
+%  \fmflabel{$\ell$}{o7}
+
+
+  \fmf{dots, label=\chiz,label.dist=+3, label.side=right}{v3,v5}
+  \fmf{photon}{v5,o6}
+  \fmflabel{$\gamma$}{o6}
+  
+  \fmf{dots}{v5,o5}
+  \fmflabel{\sGra}{o5}
+  
+  %%% Bottom vertex
+  \fmf{fermion}{v2,o1}
+%  \fmflabel{soft}{o1}
+  \fmfv{label=soft,l.dist=5thick,l.angle=15.}{o1}
+  \fmf{fermion}{v2,o2}
+%  \fmflabel{$\ell$}{o2}
+
+  \fmf{dots, label=\chiz, label.dist=+3, label.side=left}{v2,v4}
+  \fmf{photon}{v4,o3}
+  \fmflabel{\PZ/\Ph}{o3}
+  
+  \fmf{dots}{v4,o4}
+  \fmflabel{\sGra}{o4}
+               
+  %% Vertex circles
+  \fmfdot{v2,v3,v4,v5}
+           
+  %%%%%%%%%%%% Additional lines on incoming protons and blob
+  \input{shared/protons.tex}
+
+\end{fmfgraph*}
+       
+}           
+\end{fmffile} 
+
+\end{document}
