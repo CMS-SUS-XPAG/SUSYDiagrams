@@ -1,0 +1,74 @@
+
+%%%%%%%%%%%%%%%%%%%%%% Feynman diagram for T5ttcc
+
+\documentclass{article}
+
+\input{shared/header.tex}
+
+\def\MainQuark{t}
+\def\OtherQuark{c}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty}
+
+
+%%%%%%%% THE NAME OF THE fmffile HAS TO BE ``Feynman<filename>'' TO USE compile.py %%%%%%%%%%%%%%%
+\begin{fmffile}{FeynmanT5ttcc}
+\parbox{300mm}{
+
+\begin{fmfgraph*}(180,90) %\fmfpen{thick}
+  \fmfset{arrow_len}{cm}\fmfset{arrow_ang}{0}
+  
+  %%%%%%%%%%%% Specifying number of inputs/outputs
+  \fmfleftn{i}{2}
+  \fmfrightn{o}{6}
+  \fmflabel{}{i1}
+  \fmflabel{}{i2}
+    
+  %%%%%%%%%%%% Incoming protons (one line)
+  \fmf{fermion,  tension=2., lab=p, label.side=right}{v1,i1}
+  \fmf{fermion,  tension=2., lab=p, label.side=left}{v1,i2}
+           
+  %%%%%%%%%%%% Produced SUSY particles
+  \fmf{gluon, label=\sGlu,label.dist=+8, label.side=left}{v1,v3}
+  \fmf{gluon, label=\sGlu,label.dist=+12, label.side=right}{v1,v2}
+  \fmf{fermion}{v1,v2}
+  \fmf{fermion}{v1,v3}
+
+  %%%%%%%%%%%%% Decays and vertex circles
+
+  %%% Top vertex
+  \fmf{fermion}{v3,o6}
+  \fmflabel{\anti{\MainQuark}}{o6}
+
+  \fmf{dashes, label=\sTop,label.dist=+3, label.side=right}{v3,v5}
+  \fmf{fermion}{v5,o5}
+  \fmflabel{\OtherQuark}{o5}
+  
+  \fmf{dots}{v5,o4}
+  \fmflabel{\chiz}{o4}
+  
+  %%% Bottom vertex
+  \fmf{fermion}{v2,o1}
+  \fmflabel{\anti{\MainQuark}}{o1}
+  \fmf{dashes, label=\sTop, label.dist=+3, label.side=left}{v2,v4}
+  \fmf{fermion}{v4,o2}
+  \fmflabel{\OtherQuark}{o2}
+  
+  \fmf{dots}{v4,o3}
+  \fmflabel{\chiz}{o3}
+               
+  %% Vertex circles
+  \fmfdot{v2,v3,v4,v5}
+           
+  %%%%%%%%%%%% Additional lines on incoming protons and blob
+  \input{shared/protons.tex}
+
+\end{fmfgraph*}
+       
+}           
+\end{fmffile} 
+
+\end{document}
