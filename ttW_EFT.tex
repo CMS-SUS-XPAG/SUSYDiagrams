@@ -1,0 +1,48 @@
+
+%%%%%%%%%%%%%%%%%%%%%% Feynman diagram for TChiHH
+
+\documentclass{article}
+
+\input{shared/header.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty}
+
+
+%%%%%%%% THE NAME OF THE fmffile HAS TO BE ``Feynman<filename>'' TO USE compile.py %%%%%%%%%%%%%%%
+\begin{fmffile}{FeynmanttW_EFT}
+\parbox{300mm}{
+
+\begin{fmfgraph*}(180,90) %\fmfpen{thick}
+%  \fmfset{arrow_len}{cm}\fmfset{arrow_ang}{0}
+  
+  %%%%%%%%%%%% Specifying number of inputs/outputs
+  \fmfleftn{i}{2}
+  \fmfrightn{o}{3}
+  \fmflabel{$\bar{\mathrm{d}}$}{i2}
+  \fmflabel{$\mathrm{u}$}{i1}
+  \fmflabel{$\bar{\mathrm{t}}$}{o1}
+  \fmflabel{$\mathrm{t}$}{o2}
+  \fmflabel{$\mathrm{W}$}{o3}
+    
+  %%%%%%%%%%%% Incoming protons (one line)
+  \fmf{fermion}{i1,v1}
+  \fmf{fermion,label=u}{v1,v2}
+  \fmf{fermion}{v2,i2}
+  \fmf{boson}{v2,o3}
+  \fmf{fermion}{o1,v1,o2}
+
+           
+  \fmfv{decor.shape=circle, decor.size=.04w}{v1}
+           
+
+
+
+\end{fmfgraph*}
+       
+}           
+\end{fmffile} 
+
+\end{document}
