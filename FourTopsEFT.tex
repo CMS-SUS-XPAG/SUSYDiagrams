@@ -1,0 +1,45 @@
+
+%%%%%%%%%%%%%%%%%%%%%% Feynman diagram for TChiHH
+
+\documentclass{article}
+
+\input{shared/header.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty}
+
+
+%%%%%%%% THE NAME OF THE fmffile HAS TO BE ``Feynman<filename>'' TO USE compile.py %%%%%%%%%%%%%%%
+\begin{fmffile}{FeynmanFourTopsEFT}
+\parbox{300mm}{
+
+\begin{fmfgraph*}(180,90) %\fmfpen{thick}
+%  \fmfset{arrow_len}{cm}\fmfset{arrow_ang}{0}
+  
+  %%%%%%%%%%%% Specifying number of inputs/outputs
+  \fmfleftn{i}{2}
+  \fmfrightn{o}{4}
+  \fmflabel{g}{i1}
+  \fmflabel{g}{i2}
+  \fmflabel{$\mathrm{t}$}{o1}
+  \fmflabel{$\bar{\mathrm{t}}$}{o2}
+  \fmflabel{$\mathrm{t}$}{o3}
+  \fmflabel{$\bar{\mathrm{t}}$}{o4}
+
+    
+  %%%%%%%%%%%% Incoming gluons (one line)
+  \fmf{gluon,  tension=4.}{i1,v1}
+  \fmf{gluon,  tension=4.}{i2,v2}
+
+  \fmf{fermion,  tension=2.}{o1,v1,v3,v2,o4}
+  \fmf{fermion,  tension=2.}{o2,v3,o3}
+  \fmfv{decor.shape=circle, decor.size=.04w}{v3}
+
+\end{fmfgraph*}
+       
+}           
+\end{fmffile} 
+
+\end{document}

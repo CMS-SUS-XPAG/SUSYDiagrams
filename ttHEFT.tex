@@ -1,0 +1,45 @@
+
+%%%%%%%%%%%%%%%%%%%%%% Feynman diagram for TChiHH
+
+\documentclass{article}
+
+\input{shared/header.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty}
+
+
+%%%%%%%% THE NAME OF THE fmffile HAS TO BE ``Feynman<filename>'' TO USE compile.py %%%%%%%%%%%%%%%
+\begin{fmffile}{FeynmanttHEFT}
+\parbox{300mm}{
+
+\begin{fmfgraph*}(180,90) %\fmfpen{thick}
+%  \fmfset{arrow_len}{cm}\fmfset{arrow_ang}{0}
+  
+  %%%%%%%%%%%% Specifying number of inputs/outputs
+  \fmfleftn{i}{2}
+  \fmfrightn{o}{3}
+  \fmflabel{g}{i1}
+  \fmflabel{g}{i2}
+  \fmflabel{$\mathrm{t}$}{o1}
+  \fmflabel{$\bar{\mathrm{t}}$}{o3}
+  \fmflabel{H}{o2}
+
+    
+  \fmf{gluon}{i1,v1}
+  \fmf{gluon}{i2,v1}
+
+  \fmf{fermion}{o1,v1,o3}
+  \fmf{dashes}{v1,o2}
+
+
+  \fmfv{decor.shape=circle, decor.size=.04w}{v1}
+
+\end{fmfgraph*}
+       
+}           
+\end{fmffile} 
+
+\end{document}
